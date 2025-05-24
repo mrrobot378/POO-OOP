@@ -1,0 +1,51 @@
+/*
+    Sistema de cadastro de produtos
+*/
+
+import java.util.Scanner;
+
+public class Main
+{
+    int id;
+    float preco;
+    String nome;
+    public Main(float pre,int id,String n)
+    {
+        this.preco = pre;
+        this.id = id;
+        this.nome = n;
+    }
+    
+    
+	public static void main(String[] args) {
+	    
+	    Scanner scan = new Scanner(System.in);
+		Main[] produtos = new Main[20];
+		
+		int opcao, i = 0;
+		float valor;
+		
+		do{
+		    System.out.print("\n\t0-Sair\n\t1-Cadastrar\n\t2-Imprimir\n");
+		    opcao = scan.nextInt();
+		    
+		    switch(opcao)
+		    {
+		        case 1:
+                i = Cadastrar.Cadastro(produtos, i, scan);
+                break;
+
+		        case 2:
+		        for(int j = 1; j < 21; j++)
+		        {
+		            System.out.println(String.format("Item %d: preco = %.2f, id = %d, nome = %s", j, produtos[j].preco, produtos[j].id, produtos[j].nome));
+		        }
+		            
+		        break;
+		    }
+		    
+		}while (opcao != 0);
+		
+	
+	}
+}

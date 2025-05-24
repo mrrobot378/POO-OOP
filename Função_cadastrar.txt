@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Cadastrar {
+    public static int Cadastro(Main[] produtos, int i, Scanner scan) {
+        float preco;
+        int id;
+        String nome;
+
+        System.out.println("Insira em ordem: preco, id, nome");
+
+        preco = scan.nextFloat();
+        id = scan.nextInt();
+        scan.nextLine(); // consome o ENTER
+        nome = scan.nextLine();
+
+        produtos[i] = new Main(preco, id, nome);
+        i++; // incrementa e retorna
+
+        return i;
+    }
+}
